@@ -15,25 +15,28 @@
             overflow-y: auto;
         }
         header {
-            background: #1e1e1e;
-            color: #00aaff;
+            background: linear-gradient(135deg, #1e1e1e, #00aaff);
+            color: #fff;
             padding: 2rem 0;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
             position: relative;
+            animation: fadeIn 1.5s ease-in-out;
         }
         header img {
             position: absolute;
-            top: 70px;
-            left: 30px;
+            top: 10px;
+            left: 10px;
             max-width: 100px;
         }
         header h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-bottom: 0.5rem;
+            animation: bounceIn 1s ease-out;
         }
         header p {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
+            animation: fadeIn 2s ease-in-out;
         }
         nav {
             display: flex;
@@ -70,6 +73,7 @@
             text-align: center;
             background: rgba(20, 20, 20, 0.8);
             box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.7);
+            animation: fadeIn 1.5s ease-in-out;
         }
         section:nth-of-type(even) {
             background: rgba(25, 25, 25, 0.9);
@@ -77,16 +81,18 @@
         }
         section h2 {
             color: #00aaff;
-            font-size: 2rem;
+            font-size: 2.5rem;
             border-bottom: 3px solid #00aaff;
             padding-bottom: 0.5rem;
             margin-bottom: 1.5rem;
+            animation: slideIn 1s ease-out;
         }
         footer {
             text-align: center;
             padding: 1rem;
-            background: #1e1e1e;
+            background: linear-gradient(135deg, #1e1e1e, #121212);
             color: #f0f0f0;
+            animation: fadeIn 1.5s ease-in-out;
         }
         .cv-download {
             text-align: center;
@@ -111,6 +117,7 @@
             padding-left: 1.5rem;
             text-align: left;
             max-width: 600px;
+            animation: fadeIn 1.5s ease-in-out;
         }
         ul li {
             margin: 0.5rem 0;
@@ -138,12 +145,12 @@
             font-size: 1rem;
         }
         .bar {
-            --bar-width: 0%;
             height: 20px;
             background: #333;
             border-radius: 10px;
             overflow: hidden;
             position: relative;
+            --bar-width: 0%;
         }
         .bar::after {
             content: '';
@@ -154,38 +161,81 @@
             background: linear-gradient(90deg, #fdd835, #ffeb3b);
             border-radius: 10px;
             width: 0;
-            animation: growBar 3s ease-out infinite;
+            animation: growBar 2s ease-out infinite;
         }
 
         @keyframes growBar {
             from { width: 0; }
             to { width: var(--bar-width); }
         }
-        .project-item {
-            margin: 1.5rem 0;
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            justify-content: center;
-            text-align: left;
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
-        .project-item img {
-            max-width: 200px;
-            border-radius: 10px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+
+        @keyframes bounceIn {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
-        .project-item div {
-            max-width: 500px;
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
         }
-        .projects-detailed {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 3rem;
+
+        .bouncing-arrow {
+            display: block;
+            margin: 2rem auto 0;
+            width: 40px;
+            height: 40px;
+            background: #00aaff;
+            clip-path: polygon(50% 0%, 100% 75%, 75% 75%, 75% 100%, 25% 100%, 25% 75%, 0% 75%);
+            animation: bounce 1.5s infinite;
         }
-        .contact-icons img {
-            max-width: 30px;
-            margin-right: 10px;
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .find-cv {
+            margin-top: 4rem;
+            text-align: center;
+            color: #f0f0f0;
+        }
+
+        .find-cv a {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 1rem 2rem;
+            color: #121212;
+            background: #00aaff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .find-cv a:hover {
+            background: #0088cc;
+            transform: scale(1.1);
         }
     </style>
 </head>
@@ -336,15 +386,18 @@
         <h2>Contact</h2>
         <div class="contact-icons">
             <p><a href="mailto:laketheliau@gmail.com"><img src="https://img.icons8.com/ios-glyphs/30/00aaff/email.png" alt="Email Icon"> Email</a></p>
-            <p><a href="https://www.linkedin.com/in/th%C3%A9liau-lake-4b4109336/"><img src="https://img.icons8.com/ios-glyphs/30/00aaff/linkedin.png" alt="LinkedIn Icon"> LinkedIn</a></p>
-            <p><a href="https://github.com/theliau17"><img src="https://img.icons8.com/ios-glyphs/30/00aaff/github.png" alt="GitHub Icon"> GitHub</a></p>
+            <p><a href="https://www.linkedin.com/in/th%C3%A9liau-lake-4b4109336/">LinkedIn</a></p>
+            <p><a href="https://github.com/theliau17">GitHub</a></p>
         </div>
     </section>
 
-    <section class="cv-download">
-        <h2>Download My CV</h2>
-        <a href="cv_harvard_en.pdf" download>Download Harvard Version</a>
-        <a href="CV2425_EN_New.pdf" download>Download Color Version</a>
+    <section class="find-cv">
+        <h2>Find My CV Below</h2>
+        <div class="bouncing-arrow"></div>
+        <div class="cv-download">
+            <a href="cv_harvard_en.pdf" download>Download Harvard Version</a>
+            <a href="CV2425_EN_New.pdf" download>Download Color Version</a>
+        </div>
     </section>
 
     <footer>
