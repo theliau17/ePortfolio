@@ -1,161 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Théliau Lake | ePortfolio</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #1e1e1e, #121212);
-            color: #f0f0f0;
-            line-height: 1.6;
-            overflow: hidden;
-        }
-        header {
-            background: #1e1e1e;
-            color: #00aaff;
-            padding: 2rem 0;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
-            position: relative;
-        }
-        header img {
-            position: absolute;
-            top: 70px;
-            left: 10px;
-            max-width: 100px;
-        }
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        header p {
-            font-size: 1.2rem;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background: rgba(30, 30, 30, 0.9);
-            padding: 1rem 0;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
-        }
-        nav a {
-            color: #f0f0f0;
-            text-decoration: none;
-            margin: 0 1.5rem;
-            font-size: 1.2rem;
-            font-weight: bold;
-            transition: color 0.3s, transform 0.3s;
-        }
-        nav a:hover {
-            color: #00aaff;
-            transform: scale(1.1);
-        }
-        section {
+.skill-bar-container {
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 2rem;
-            scroll-snap-align: start;
-            position: relative;
-            text-align: center;
-            background: rgba(20, 20, 20, 0.8);
-            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.7);
-        }
-        section:nth-of-type(even) {
-            background: rgba(25, 25, 25, 0.9);
-            border-radius: 8px;
-        }
-        section h2 {
-            color: #00aaff;
-            font-size: 2rem;
-            border-bottom: 3px solid #00aaff;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background: #1e1e1e;
-            color: #f0f0f0;
-        }
-        .cv-download {
-            text-align: center;
-            margin-top: 2rem;
-        }
-        .cv-download a {
-            display: inline-block;
-            margin: 0.5rem;
-            padding: 1rem 2rem;
-            color: #121212;
-            background: #00aaff;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 8px;
-            transition: background 0.3s, transform 0.3s;
-        }
-        .cv-download a:hover {
-            background: #0088cc;
-            transform: scale(1.1);
-        }
-        ul {
-            padding-left: 1.5rem;
-            text-align: left;
+            gap: 1rem;
             max-width: 600px;
+            margin: 0 auto;
         }
-        ul li {
-            margin: 0.5rem 0;
-            font-size: 1.2rem;
+        .skill-bar {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
         }
-        .highlight {
-            color: #00ffcc;
+        .skill-bar span {
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1rem;
         }
-        .project-item {
-            margin: 1.5rem 0;
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            justify-content: center;
-            text-align: left;
-        }
-        .project-item img {
-            max-width: 200px;
+        .bar {
+            height: 20px;
+            background: #333;
             border-radius: 10px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            position: relative;
         }
-        .project-item div {
-            max-width: 500px;
+        .bar::after {
+            content: '';
+            position: absolute;
+            height: 100%;
+            background: linear-gradient(90deg, #00aaff, #00ffcc);
+            border-radius: 10px;
+            animation: growBar 1s ease-in-out;
         }
-        .projects-detailed {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 3rem;
-        }
-        html {
-            scroll-snap-type: y mandatory;
-            overflow-y: scroll;
-        }
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .contact-icons img {
-            max-width: 30px;
-            margin-right: 10px;
+        @keyframes growBar {
+            from { width: 0; }
+            to { width: 100%; }
         }
     </style>
 </head>
@@ -183,7 +59,7 @@
             I am a <span class="highlight">motivated</span>, <span class="highlight">determined</span>, and <span class="highlight">serious</span> Master's student in Computer Science with expertise in software development, artificial intelligence, and project management. Additionally, I am the founder of a <span class="highlight">sole proprietorship</span> specializing in embedded systems and automation frameworks for businesses. I am seeking a 3-5 month internship starting in April 2025 to further develop my skills and contribute to impactful projects.
         </p>
         <img src="-1_orig (1).jpeg" alt="Company Slogan" style="margin-top: 20px; max-width: 300px;">
-        <p style="margin-top: 20px; font-style: italic;">"Looking For Transformation"</p>
+        <p style="margin-top: 20px; font-style: italic;">"Looking Towards Transformation"</p>
     </section>
 
     <section id="education">
@@ -198,13 +74,28 @@
     <section id="skills">
         <h2>Skills</h2>
         <h3>Hard Skills</h3>
-        <ul>
-            <li>Programming: C, C#, Java, Python, R</li>
-            <li>Databases: MySQL, XML, MongoDB</li>
-            <li>Web Development: HTML5, CSS3, JavaScript</li>
-            <li>Software Tools: Unity, Docker</li>
-            <li>Operating Systems: Windows, Debian, Ubuntu</li>
-        </ul>
+        <div class="skill-bar-container">
+            <div class="skill-bar">
+                <span>Programming: C, C#, Java, Python, R</span>
+                <div class="bar" style="width: 95%;"></div>
+            </div>
+            <div class="skill-bar">
+                <span>Databases: MySQL, XML, MongoDB</span>
+                <div class="bar" style="width: 85%;"></div>
+            </div>
+            <div class="skill-bar">
+                <span>Web Development: HTML5, CSS3, JavaScript</span>
+                <div class="bar" style="width: 90%;"></div>
+            </div>
+            <div class="skill-bar">
+                <span>Software Tools: Unity, Docker</span>
+                <div class="bar" style="width: 80%;"></div>
+            </div>
+            <div class="skill-bar">
+                <span>Operating Systems: Windows, Debian, Ubuntu</span>
+                <div class="bar" style="width: 75%;"></div>
+            </div>
+        </div>
         <h3>Soft Skills</h3>
         <ul>
             <li>Crisis management</li>
