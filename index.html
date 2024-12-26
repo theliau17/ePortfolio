@@ -143,6 +143,7 @@
             border-radius: 10px;
             overflow: hidden;
             position: relative;
+            --bar-width: 0%;
         }
         .bar::after {
             content: '';
@@ -150,10 +151,13 @@
             height: 100%;
             background: linear-gradient(90deg, #fdd835, #ffeb3b);
             border-radius: 10px;
+            width: 0;
+            animation: growBar 2s ease-out forwards;
         }
+
         @keyframes growBar {
             from { width: 0; }
-            to { width: 100%; }
+            to { width: var(--bar-width); }
         }
         .project-item {
             margin: 1.5rem 0;
@@ -225,23 +229,23 @@
         <div class="skill-bar-container">
             <div class="skill-bar">
                 <span>Programming: C, C#, Java, Python, R</span>
-                <div class="bar" style="width: 95%;"></div>
+                <div class="bar" style="--bar-width: 95%;"></div>
             </div>
             <div class="skill-bar">
                 <span>Databases: MySQL, XML, MongoDB</span>
-                <div class="bar" style="width: 85%;"></div>
+                <div class="bar" style="--bar-width: 85%;"></div>
             </div>
             <div class="skill-bar">
                 <span>Web Development: HTML5, CSS3, JavaScript</span>
-                <div class="bar" style="width: 90%;"></div>
+                <div class="bar" style="--bar-width: 90%;"></div>
             </div>
             <div class="skill-bar">
                 <span>Software Tools: Unity, Docker</span>
-                <div class="bar" style="width: 80%;"></div>
+                <div class="bar" style="--bar-width: 80%;"></div>
             </div>
             <div class="skill-bar">
                 <span>Operating Systems: Windows, Debian, Ubuntu</span>
-                <div class="bar" style="width: 75%;"></div>
+                <div class="bar" style="--bar-width: 75%;"></div>
             </div>
         </div>
         <h3>Soft Skills</h3>
