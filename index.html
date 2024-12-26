@@ -138,21 +138,23 @@
             font-size: 1rem;
         }
         .bar {
+            --bar-width: 0%;
             height: 20px;
             background: #333;
             border-radius: 10px;
             overflow: hidden;
             position: relative;
-            --bar-width: 0%;
         }
         .bar::after {
             content: '';
             position: absolute;
+            left: 0;
+            top: 0;
             height: 100%;
             background: linear-gradient(90deg, #fdd835, #ffeb3b);
             border-radius: 10px;
             width: 0;
-            animation: growBar 2s ease-out forwards;
+            animation: growBar 3s ease-out forwards;
         }
 
         @keyframes growBar {
