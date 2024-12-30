@@ -187,6 +187,26 @@
             max-width: 30px;
             margin-right: 10px;
         }
+        
+        .bouncing-arrow {
+            display: block;
+            margin: 2rem auto 0;
+            width: 40px;
+            height: 40px;
+            background: #00aaff;
+            clip-path: polygon(50% 0%, 100% 75%, 75% 75%, 75% 100%, 25% 100%, 25% 75%, 0% 75%);
+            animation: bounce 1.5s infinite;
+            transform: rotate(180deg);
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
     </style>
 </head>
 <body>
@@ -340,6 +360,7 @@
             <p><a href="https://www.linkedin.com/in/th%C3%A9liau-lake-4b4109336/"><img src="https://img.icons8.com/ios-glyphs/30/00aaff/linkedin.png" alt="LinkedIn Icon"> LinkedIn</a></p>
             <p><a href="https://github.com/theliau17"><img src="https://img.icons8.com/ios-glyphs/30/00aaff/github.png" alt="GitHub Icon"> GitHub</a></p>
         </div>
+        <div class="bouncing-arrow"></div>
     </section>
 
     <section class="cv-download" id="cv">
