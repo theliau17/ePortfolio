@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Théliau Lake | ePortfolio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1e1e1e, #121212);
+            color: #f0f0f0;
+            line-height: 1.6;
+            overflow-y: auto;
+        }
+        header {
+            background: #1e1e1e;
+            color: #00aaff;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+            position: relative;
+        }
+        header img {
+            position: absolute;
+            top: 70px;
+            left: 30px;
+            max-width: 100px;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        header p {
+            font-size: 1.2rem;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: rgba(30, 30, 30, 0.9);
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+        }
+        nav a {
+            color: #f0f0f0;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.3s;
+        }
+        nav a:hover {
+            color: #00aaff;
+            transform: scale(1.1);
+        }
+        section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem;
+            scroll-snap-align: start;
+            position: relative;
+            text-align: center;
+            background: rgba(20, 20, 20, 0.8);
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.7);
+        }
+        section:nth-of-type(even) {
+            background: rgba(25, 25, 25, 0.9);
+            border-radius: 8px;
+        }
+        section h2 {
+            color: #00aaff;
+            font-size: 2rem;
+            border-bottom: 3px solid #00aaff;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #1e1e1e;
+            color: #f0f0f0;
+        }
+        .cv-download {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .cv-download a {
+            display: inline-block;
+            margin: 0.5rem;
+            padding: 1rem 2rem;
+            color: #121212;
+            background: #00aaff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .cv-download a:hover {
+            background: #0088cc;
+            transform: scale(1.1);
+        }
+        ul {
+            padding-left: 1.5rem;
+            text-align: left;
+            max-width: 600px;
+        }
+        ul li {
+            margin: 0.5rem 0;
+            font-size: 1.2rem;
+        }
+        .highlight {
+            color: #00ffcc;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .skill-bar-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .skill-bar {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .skill-bar span {
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        .bar {
+            --bar-width: 0%;
+            height: 20px;
+            background: #333;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        .bar::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background: linear-gradient(90deg, #fdd835, #ffeb3b);
+            border-radius: 10px;
+            width: 0;
+            animation: growBar 3s ease-out infinite;
+        }
+
+        @keyframes growBar {
+            from { width: 0; }
+            to { width: var(--bar-width); }
+        }
+        .project-item {
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            justify-content: center;
+            text-align: left;
+        }
+        .project-item img {
+            max-width: 200px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+        .project-item div {
+            max-width: 500px;
+        }
+        .projects-detailed {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 3rem;
+        }
+        .contact-icons img {
+            max-width: 30px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo_UCA_blanc.png" alt="University Logo">
+        <h1>Théliau Lake</h1>
+        <p>Master's Student in Computer Science | Software Development & AI</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#interests">Interests</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <img src="20241106_191259.jpg" alt="Théliau Lake" style="width: 200px; border-radius: 50%; margin-bottom: 20px;">
+        <p>
+            I am a <span class="highlight">motivated</span>, <span class="highlight">determined</span>, and <span class="highlight">serious</span> Master's student in Computer Science with expertise in software development, artificial intelligence, and project management. Additionally, I am the founder of a <span class="highlight">sole proprietorship</span> specializing in embedded systems and automation frameworks for businesses. I am seeking a 3-5 month internship starting in April 2025 to further develop my skills and contribute to impactful projects.
+        </p>
+        <img src="-1_orig (1).jpeg" alt="Company Slogan" style="margin-top: 20px; max-width: 300px;">
+        <p style="margin-top: 20px; font-style: italic;">"Looking For Transformation"</p>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <ul>
+            <li><strong>Master's Degree in Computer Science</strong> - Université Clermont Auvergne (Present)</li>
+            <li><strong>Bachelor's Degree in Computer Science</strong> - Université Clermont Auvergne (2024)</li>
+            <li><strong>Certification</strong> - Google Digital Workshops: Digital Strategies and Marketing (2020)</li>
+        </ul>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <h3>Hard Skills</h3>
+        <div class="skill-bar-container">
+            <div class="skill-bar">
+                <span>Programming: C, C#, Java, Python, R</span>
+                <div class="bar" style="--bar-width: 95%;"></div>
+            </div>
+            <div class="skill-bar">
+                <span>Databases: MySQL, XML, MongoDB</span>
+                <div class="bar" style="--bar-width: 85%;"></div>
+            </div>
+            <div class="skill-bar">
+                <span>Web Development: HTML5, CSS3, JavaScript</span>
+                <div class="bar" style="--bar-width: 90%;"></div>
+            </div>
+            <div class="skill-bar">
+                <span>Software Tools: Unity, Docker</span>
+                <div class="bar" style="--bar-width: 80%;"></div>
+            </div>
+            <div class="skill-bar">
+                <span>Operating Systems: Windows, Debian, Ubuntu</span>
+                <div class="bar" style="--bar-width: 75%;"></div>
+            </div>
+        </div>
+        <h3>Soft Skills</h3>
+        <ul>
+            <li>Crisis management</li>
+            <li>Strategic foresight</li>
+            <li>Empathic leadership</li>
+            <li>Intercultural communication</li>
+        </ul>
+        <h3>Languages</h3>
+        <ul>
+            <li>English: Fluent (TOEIC C2)🇬🇧</li>
+            <li>Spanish: Intermediate (B1)🇪🇸</li>
+            <li>Dutch: Basic🇳🇱</li>
+        </ul>
+    </section>
+
+    <section id="experience">
+        <h2>Professional Experience</h2>
+        <ul>
+            <li><strong>Anacours</strong> - Private Tutor (2023 – Present): Personalized lessons in Computer Science, English, and STEM subjects. Mentored students to improve technical and problem-solving skills.</li>
+            <li><strong>Sign & Light W.I.</strong> - Digital Transformation Contributor (2023 – Present): Optimized internal processes through electronic order tracking and invoicing.</li>
+            <li><strong>TNT Housing (SCI)</strong> - Property Management & Digital Marketing (2022 – Present): Enhanced tenant engagement and visibility via digital platforms.</li>
+            <li><strong>Collectivité de Saint-Martin</strong> - Technical Officer (Summer 2022): Managed official document issuance.</li>
+            <li><strong>Port Authority of Saint-Martin</strong> - Assistant Statistician (Summer 2021): Analyzed maritime traffic data for operational optimization.</li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects-detailed">
+            <div class="project-item">
+                <img src="DALL·E 2024-12-25 18.57.58 - Generate an image of a futuristic video game interface. Include glowing blue holographic elements with a gaming console and virtual characters in a dy.webp" alt="Game Development">
+                <div>
+                    <h3>Interactive Video Game Development</h3>
+                    <p><strong>Technologies:</strong> Unity, C#</p>
+                    <p>Developed a 3D game prototype with dynamic gameplay mechanics and immersive environments.</p>
+                </div>
+            </div>
+            <div class="project-item">
+                <img src="DALL·E 2024-12-25 18.58.04 - Create an image showing responsive web design on a modern laptop screen. The design should feature a clean interface with grid layouts and mobile resp.webp" alt="Website Development">
+                <div>
+                    <h3>Responsive Website Development</h3>
+                    <p><strong>Technologies:</strong> HTML5, JavaScript</p>
+                    <p>Designed and implemented a dynamic, responsive website with a user-friendly interface.</p>
+                </div>
+            </div>
+            <div class="project-item">
+                <img src="Blanc.png" alt="Sole Proprietorship Logo" style="max-width: 150px;">
+                <div>
+                    <h3>Sole Proprietorship for Embedded Systems</h3>
+                    <p><strong>Technologies:</strong> Embedded Systems, Python</p>
+                    <p>Developed embedded systems solutions and automated frameworks for small businesses in French overseas territories.</p>
+                </div>
+            </div>
+            <div class="project-item">
+                <img src="DALL·E 2024-12-25 18.58.12 - Create an image of a software development environment showcasing code refactoring. Include a sleek computer screen with clean, highlighted code lines .webp" alt="Code Refactoring">
+                <div>
+                    <h3>Code Refactoring</h3>
+                    <p><strong>Technologies:</strong> Java, JUnit</p>
+                    <p>Improved maintainability of legacy code, achieving 95% test coverage.</p>
+                </div>
+            </div>
+            <div class="project-item">
+                <img src="DALL·E 2024-12-25 18.58.17 - Create a professional image showcasing data analysis. Include a computer screen displaying a detailed dashboard with graphs, charts, and data visualiz.webp" alt="Data Analysis">
+                <div>
+                    <h3>Data Analysis & Engineering</h3>
+                    <p><strong>Technologies:</strong> Python, Pandas</p>
+                    <p>Processed and visualized datasets to identify actionable insights.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="interests">
+        <h2>Interests</h2>
+        <ul>
+            <li>🌍 Travel: USA, Germany, Caribbean Islands</li>
+            <li>🚗 Automobiles: History, sports, mechanics</li>
+            <li>🥋 Martial Arts: Tae-Kwon-Do (Black belt, 12 years)</li>
+            <li>❤️ Volunteering: French Blood Donation Organization</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact-icons">
+            <p><a href="mailto:laketheliau@gmail.com"><img src="https://img.icons8.com/ios-glyphs/30/00aaff/email.png" alt="Email Icon"> Email</a></p>
+            <p><a href="https://www.linkedin.com/in/th%C3%A9liau-lake-4b4109336/"><img src="https://img.icons8.com/ios-glyphs/30/00aaff/linkedin.png" alt="LinkedIn Icon"> LinkedIn</a></p>
+            <p><a href="https://github.com/theliau17"><img src="https://img.icons8.com/ios-glyphs/30/00aaff/github.png" alt="GitHub Icon"> GitHub</a></p>
+        </div>
+    </section>
+
+    <section class="cv-download">
+        <h2>Download My CV</h2>
+        <a href="cv_harvard_en.pdf" download>Download Harvard Version</a>
+        <a href="CV2425_EN_New.pdf" download>Download Color Version</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Théliau Lake</p>
+    </footer>
+</body>
+</html>
