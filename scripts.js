@@ -10,6 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Initialize skill bars
+    const skillBars = document.querySelectorAll('.bar');
+    skillBars.forEach(bar => {
+        const width = bar.style.getPropertyValue('--bar-width') || '0%';
+        bar.style.setProperty('width', width);
+    });
+
     // Add hover effect on project images
     const projectImages = document.querySelectorAll('.project-item img');
     projectImages.forEach(img => {

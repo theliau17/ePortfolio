@@ -17,6 +17,19 @@ header img {
     max-width: 100px;
     margin-bottom: 1rem;
 }
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 1rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+.slogan-img {
+    width: 300px;
+    height: auto;
+    margin: 1rem auto;
+    display: block;
+}
 nav {
     display: flex;
     justify-content: center;
@@ -56,6 +69,49 @@ section h2 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
     text-transform: uppercase;
+}
+
+/* Skills Progress Bars */
+.skill-bar-container {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.skill-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.skill-bar span {
+    font-weight: bold;
+    font-size: 1rem;
+}
+.bar {
+    position: relative;
+    background: #333;
+    border-radius: 10px;
+    height: 20px;
+    overflow: hidden;
+}
+.bar::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #fdd835, #ffeb3b);
+    width: 0%;
+    animation: growBar 2s ease-out forwards;
+}
+@keyframes growBar {
+    from {
+        width: 0%;
+    }
+    to {
+        width: var(--bar-width);
+    }
 }
 
 /* Projects */
