@@ -1,0 +1,99 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #1e1e1e, #121212);
+    color: #f0f0f0;
+    line-height: 1.6;
+}
+header {
+    background: #1e1e1e;
+    color: #00aaff;
+    padding: 2rem 0;
+    text-align: center;
+}
+header img {
+    max-width: 100px;
+    margin-bottom: 1rem;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    background: rgba(30, 30, 30, 0.9);
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+nav a {
+    color: #f0f0f0;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+}
+nav a:hover {
+    color: #00aaff;
+    transform: scale(1.1);
+}
+
+/* Sections */
+section {
+    padding: 2rem;
+    margin: 4rem 0;
+    text-align: center;
+    background: rgba(20, 20, 20, 0.8);
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.7);
+}
+section:nth-of-type(even) {
+    background: rgba(25, 25, 25, 0.9);
+}
+section h2 {
+    color: #00aaff;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+/* Projects */
+.projects-detailed {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+.project-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 300px;
+    text-align: center;
+}
+.project-item img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1rem;
+}
+.project-item h3 {
+    color: #fdd835;
+    margin-bottom: 0.5rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #1e1e1e;
+    color: #f0f0f0;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .projects-detailed {
+        flex-direction: column;
+    }
+}
