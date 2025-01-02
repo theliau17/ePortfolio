@@ -16,7 +16,7 @@ header {
 header img {
     max-width: 100px;
     margin-bottom: 1rem;
-    display: box;
+    display: block;
     margin-right: 20px;
 }
 .profile-img {
