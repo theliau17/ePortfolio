@@ -55,7 +55,7 @@ nav a:hover {
     transform: scale(1.1);
 }
 
-/* Sections 
+/* Sections */
 section {
             display: flex;
             flex-direction: column;
@@ -69,14 +69,14 @@ section {
             background: rgba(20, 20, 20, 0.8);
             box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.7);
         }
-*/
-section {
+
+/*section {
     padding: 2rem;
     margin: 4rem 0;
     text-align: center;
     background: rgba(20, 20, 20, 0.8);
     box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.7);
-}
+}*/
 
 section:nth-of-type(even) {
     background: rgba(25, 25, 25, 0.9);
@@ -111,7 +111,7 @@ section h2 {
         }
         ul {
             padding-left: 1.5rem;
-            text-align: left;
+            text-align: center;
             max-width: 600px;
         }
         ul li {
