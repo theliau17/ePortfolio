@@ -8,36 +8,28 @@ document.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
             const targetId = link.getAttribute('href').substring(1);
             const targetSection = document.getElementById(targetId);
-            
+
             // Hide all sections and show only the target section
             sections.forEach(section => {
                 section.style.display = 'none';
             });
             targetSection.style.display = 'flex'; // Ensures proper centering
+
+            // Trigger progress bar animation if the target is the Skills section
+            if (targetId === 'skills') {
+                const skillBars = document.querySelectorAll('.bar');
+                skillBars.forEach(bar => {
+                    const width = bar.style.getPropertyValue('--bar-width');
+                    bar.style.width = width; // Trigger progress bar animation
+                });
+            }
         });
     });
 
     // Ensure the first section is visible on load
     sections.forEach((section, index) => {
         section.style.display = index === 0 ? 'flex' : 'none';
-        });
     });
-
-    // Initialize skill bars when the "Skills" section is visible
-    const skillsSection = document.getElementById('skills');
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const skillBars = document.querySelectorAll('.bar');
-                skillBars.forEach(bar => {
-                    const width = bar.style.getPropertyValue('--bar-width');
-                    bar.style.width = width;
-                });
-            }
-        });
-    }, { threshold: 0.5 });
-
-    observer.observe(skillsSection);
 
     // Add hover effect on project images
     const projectImages = document.querySelectorAll('.project-item img');
@@ -50,7 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
             img.style.transform = 'scale(1)';
         });
     });
-     // Lightbox functionality for interests section
+
+    // Lightbox functionality for interests section
     const lightbox = document.createElement('div');
     lightbox.classList.add('lightbox');
     document.body.appendChild(lightbox);
@@ -77,4 +70,3 @@ document.addEventListener('DOMContentLoaded', () => {
         lightbox.style.display = 'none';
     });
 });
-
