@@ -57,8 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const content = document.createElement('div');
     lightbox.appendChild(content);
 
-    const interestItems = document.querySelectorAll('.interest-item img, .interest-item video');
-    interestItems.forEach(item => {
+    const interestMedia = document.querySelectorAll('.interest-item img, .interest-item video');
+    interestMedia.forEach(item => {
         item.addEventListener('click', () => {
             content.innerHTML = ''; // Clear previous content
             const clone = item.cloneNode(true);
@@ -66,7 +66,13 @@ document.addEventListener('DOMContentLoaded', () => {
             lightbox.style.display = 'flex';
         });
     });
-    const interestItems = document.querySelectorAll('.interest-item .overlay');
+
+    closeButton.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+    });
+
+    // Animate text in the Interests section
+    const interestDescriptions = document.querySelectorAll('.interest-item .overlay');
 
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -76,13 +82,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 entry.target.style.width = '100%'; // Start showing text progressively
             }
         });
-    }, { threshold: 0.5 }); // Adjust threshold as needed
+    }, { threshold: 0.5 }); // Adjust threshold for animation trigger
 
-    interestItems.forEach(item => {
-        observer.observe(item);
-    });
-
-    closeButton.addEventListener('click', () => {
-        lightbox.style.display = 'none';
+    interestDescriptions.forEach(description => {
+        observer.observe(description);
     });
 });
