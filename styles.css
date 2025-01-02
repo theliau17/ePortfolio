@@ -27,7 +27,7 @@ header img {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
 .slogan-img {
-    width: 300px;
+    width: 400px;
     height: auto;
     margin: 1rem auto;
     display: block;
@@ -92,7 +92,7 @@ section h2 {
 /*CV*/
  .cv-download {
             text-align: center;
-            margin-top: 2rem;
+            margin-top: 45vh;
         }
         .cv-download a {
             display: inline-block;
