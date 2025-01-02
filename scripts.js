@@ -66,6 +66,21 @@ document.addEventListener('DOMContentLoaded', () => {
             lightbox.style.display = 'flex';
         });
     });
+    const interestItems = document.querySelectorAll('.interest-item .overlay');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Trigger the typing animation
+                entry.target.style.animation = 'typing 4s steps(20, end), blink 0.5s step-end infinite';
+                entry.target.style.width = '100%'; // Start showing text progressively
+            }
+        });
+    }, { threshold: 0.5 }); // Adjust threshold as needed
+
+    interestItems.forEach(item => {
+        observer.observe(item);
+    });
 
     closeButton.addEventListener('click', () => {
         lightbox.style.display = 'none';
