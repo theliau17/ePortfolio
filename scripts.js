@@ -9,13 +9,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetId = link.getAttribute('href').substring(1);
             const targetSection = document.getElementById(targetId);
             
-            // Hide other sections and show only the target section
+            // Hide all sections and show only the target section
             sections.forEach(section => {
-                section.style.display = section.id === targetId ? 'block' : 'none';
+                section.style.display = 'none';
             });
+            targetSection.style.display = 'flex'; // Ensures proper centering
+        });
+    });
 
-            // Scroll smoothly to the top of the target section
-            targetSection.scrollIntoView({ behavior: 'smooth' });
+    // Ensure the first section is visible on load
+    sections.forEach((section, index) => {
+        section.style.display = index === 0 ? 'flex' : 'none';
         });
     });
 
