@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 section.style.display = 'none';
             });
             targetSection.style.display = 'flex'; // Ensures proper centering
-
+            // Update the URL hash without reloading the page
+            history.pushState(null, null, `#${targetId}`);
             // Trigger progress bar animation if the target is the Skills section
             if (targetId === 'skills') {
                 const skillBars = document.querySelectorAll('.bar');
