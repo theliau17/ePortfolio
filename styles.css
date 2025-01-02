@@ -84,7 +84,7 @@ section h2 {
 /*CV*/
  .cv-download {
             text-align: center;
-            margin-top: 45vh;
+            margin-top: 25vh;
         }
         .cv-download a {
             display: inline-block;
@@ -103,7 +103,7 @@ section h2 {
         }
  .contact-icons {
             text-align: center;
-            margin-top: 45vh;
+            margin-top: 20vh;
         }
         .contact-icons a {
             display: inline-block;
@@ -117,7 +117,7 @@ section h2 {
             transition: background 0.3s, transform 0.3s;
         }
         .contact-icons a:hover {
-            background: #0088cc;
+            background: white;
             transform: scale(1.1);
         }
         ul {
