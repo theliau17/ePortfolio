@@ -54,6 +54,9 @@ nav a:hover {
     color: #00aaff;
     transform: scale(1.1);
 }
+p {
+    text-align: center; /* Centers paragraph text */
+}
 
 /* Sections */
 section {
@@ -103,14 +106,14 @@ section h2 {
         }
  .contact-icons {
             text-align: center;
-            margin-top: 20vh;
+            margin-top: 10vh;
         }
         .contact-icons a {
             display: inline-block;
             margin: 0.5rem;
             padding: 1rem 2rem;
             color: #121212;
-            background: #00aaff;
+            background: white;
             text-decoration: none;
             font-weight: bold;
             border-radius: 8px;
