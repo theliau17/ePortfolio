@@ -232,8 +232,49 @@ section h2 {
 .interest-item:hover {
     transform: scale(1.05);
 }
-.interest-item img,
+.interest-item:hover .overlay {
+    opacity: 1; /* Show overlay */
+    color: #00ffcc;
+    transition: color 0.3s ease-in-out;
+}
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    from {
+        border-right-color: transparent;
+    }
+    to {
+        border-right-color: white;
+    }
+}
+
+.interest-item .overlay {
+    font-size: 1.5rem;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid white;
+    width: 0; /* Hidden by default */
+}
+
+.interest-item video:hover {
+    pointer-events: auto; /* Allow video controls */
+}
+.interest-item img {
+    width: 85%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
 .interest-item video {
+    pointer-events: auto;
     width: 100%;
     height: auto;
     display: block;
