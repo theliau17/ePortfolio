@@ -56,7 +56,7 @@ nav a:hover {
 }
 
 /* Sections */
-section {
+/*section {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -68,15 +68,15 @@ section {
             text-align: center;
             background: rgba(20, 20, 20, 0.8);
             box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.7);
-        }
+        }*/
 
-/*section {
+section {
     padding: 2rem;
     margin: 4rem 0;
     text-align: center;
     background: rgba(20, 20, 20, 0.8);
     box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.7);
-}*/
+}
 
 section:nth-of-type(even) {
     background: rgba(25, 25, 25, 0.9);
