@@ -56,7 +56,7 @@ nav a:hover {
 }
 
 /* Sections */
-/*section {
+section {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -68,15 +68,7 @@ nav a:hover {
             text-align: center;
             background: rgba(20, 20, 20, 0.8);
             box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.7);
-        }*/
-
-section {
-    padding: 2rem;
-    margin: 4rem 0;
-    text-align: center;
-    background: rgba(20, 20, 20, 0.8);
-    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.7);
-}
+        }
 
 section:nth-of-type(even) {
     background: rgba(25, 25, 25, 0.9);
@@ -136,6 +128,7 @@ section h2 {
         ul li {
             margin: 0.5rem 0;
             font-size: 1.2rem;
+            text-align: center;
         }
 
  .highlight {
