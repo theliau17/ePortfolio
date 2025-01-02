@@ -65,7 +65,9 @@ section {
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 2rem;
+            margin: 0; /* Removes any unwanted spacing */
+            padding: 0; /* Removes any padding that could cause scrolling */
+            /*padding: 2rem;*/
             scroll-snap-align: start;
             position: relative;
             text-align: center;
