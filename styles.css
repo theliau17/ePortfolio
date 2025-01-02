@@ -262,6 +262,12 @@ section h2 {
     overflow: hidden;
     border-right: 2px solid white;
     width: 0; /* Hidden by default */
+    pointer-events: none; /* Prevent blocking video interaction */
+}
+
+.interest-item .overlay.animate {
+    animation: typing 4s steps(30, end), blink 0.5s step-end infinite;
+    width: 100%; /* Trigger full text display */
 }
 
 .interest-item video:hover {
