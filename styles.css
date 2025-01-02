@@ -109,11 +109,11 @@ section h2 {
             background: #0088cc;
             transform: scale(1.1);
         }
- .contact-icon {
+ .contact-icons {
             text-align: center;
             margin-top: 45vh;
         }
-        .contact-icon a {
+        .contact-icons a {
             display: inline-block;
             margin: 0.5rem;
             padding: 1rem 2rem;
@@ -124,7 +124,7 @@ section h2 {
             border-radius: 8px;
             transition: background 0.3s, transform 0.3s;
         }
-        .contact-icon a:hover {
+        .contact-icons a:hover {
             background: #0088cc;
             transform: scale(1.1);
         }
