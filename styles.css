@@ -14,10 +14,10 @@ header {
     text-align: center;
 }
 header img {
-    max-width: 100px;
-    margin-bottom: 1rem;
-    display: block;
-    margin-right: 20px;
+   position: absolute;
+            top: 70px;
+            left: 30px;
+            max-width: 100px;
 }
 .profile-img {
     width: 150px;
@@ -256,7 +256,10 @@ section h2 {
 .interest-item:hover .overlay {
     opacity: 1;
 }*/
-
+.findmyresume{
+            color: #00aaff;
+            font-weight: bold;
+            }
 /* Footer */
 footer {
     text-align: center;
