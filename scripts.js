@@ -77,9 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Trigger the typing animation
-                entry.target.style.animation = 'typing 4s steps(20, end), blink 0.5s step-end infinite';
-                entry.target.style.width = '100%'; // Start showing text progressively
+                // Add the animate class to trigger the CSS animation
+                entry.target.classList.add('animate');
             }
         });
     }, { threshold: 0.5 }); // Adjust threshold for animation trigger
