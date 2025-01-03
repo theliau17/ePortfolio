@@ -2,7 +2,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // Smooth scrolling for navigation links
     const navLinks = document.querySelectorAll('nav a');
     const sections = document.querySelectorAll('section');
+// Animate text in the Interests section
+    const interestDescriptions = document.querySelectorAll('.interest-item .overlay');
 
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Add the animate class to trigger the CSS animation
+                entry.target.classList.add('animate');
+            }
+        });
+    }, { threshold: 0.5 }); // Adjust threshold for animation trigger
+
+    interestDescriptions.forEach(description => {
+        observer.observe(description);
+    });
+    
     navLinks.forEach(link => {
         link.addEventListener('click', event => {
             event.preventDefault();
@@ -71,19 +86,5 @@ document.addEventListener('DOMContentLoaded', () => {
         lightbox.style.display = 'none';
     });
 
-    // Animate text in the Interests section
-    const interestDescriptions = document.querySelectorAll('.interest-item .overlay');
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Add the animate class to trigger the CSS animation
-                entry.target.classList.add('animate');
-            }
-        });
-    }, { threshold: 0.5 }); // Adjust threshold for animation trigger
-
-    interestDescriptions.forEach(description => {
-        observer.observe(description);
-    });
+    
 });
