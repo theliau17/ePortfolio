@@ -234,8 +234,7 @@ section h2 {
 }
 .interest-item:hover .overlay {
     opacity: 1; /* Show overlay */
-    color: #00ffcc;
-    transition: color 0.3s ease-in-out;
+    
 }
 @keyframes typing {
     from {
@@ -265,8 +264,8 @@ section h2 {
     justify-content: center;
     align-items: center;
     background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
-    color: #fff; /* White text for visibility */
-    font-size: 1.5rem;
+    color: white; /* White text for visibility */
+    font-size: 1.2rem;
     font-weight: bold;
     text-align: center;
     padding: 1rem;
