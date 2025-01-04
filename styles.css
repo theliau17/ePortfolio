@@ -219,23 +219,29 @@ ul li {
     color: #f0f0f0;
 }
 
+/* Interest Grid */
 .interest-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adaptive grid with a minimum width */
+    gap: 2rem; /* Space between items */
+    margin: 2rem auto; /* Center the grid */
+    max-width: 1200px; /* Limit grid width for larger screens */
+    justify-content: center;
+    align-items: center;
 }
 
+/* Individual Items */
 .interest-item {
     position: relative;
-    overflow: hidden; /* Prevent media overflow */
+    overflow: hidden;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Depth effect */
-    max-width: 300px; /* Limit width of items */
-    max-height: 200px; /* Limit height of items */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 400px; /* Ensure items aren't too wide */
+    height: auto; /* Allow adaptive height */
+    margin: 0 auto; /* Center the items */
     transition: transform 0.3s ease;
 }
 
@@ -295,15 +301,12 @@ ul li {
 /* General Styling for Images and Videos */
 .interest-item img, 
 .interest-item video {
-    max-width: 100%; /* Scale down to fit the container */
-    max-height: 100%; /* Prevent overflow */
-    width: auto; /* Maintain aspect ratio */
+    max-width: 100%;
     height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Ensure proper cropping for non-uniform dimensions */
-    border-radius: 10px; /* Rounded corners */
+    object-fit: cover; /* Ensure proper cropping */
+    border-radius: 10px;
     display: block;
-    margin: 0 auto; /* Center the media inside the container */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Add some depth */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* Lightbox Modal */
