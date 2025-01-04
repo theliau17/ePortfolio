@@ -46,19 +46,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Lightbox functionality for interests section
     const lightbox = document.createElement('div');
-    lightbox.classList.add('lightbox');
-    document.body.appendChild(lightbox);
+lightbox.classList.add('lightbox');
+document.body.appendChild(lightbox);
 
-    const closeButton = document.createElement('span');
-    closeButton.classList.add('lightbox-close');
-    closeButton.innerHTML = '&times;';
-    lightbox.appendChild(closeButton);
+const closeButton = document.createElement('span');
+closeButton.classList.add('lightbox-close');
+closeButton.innerHTML = '&times;';
+lightbox.appendChild(closeButton);
 
-    const content = document.createElement('div');
-    lightbox.appendChild(content);
+const content = document.createElement('div');
+lightbox.appendChild(content);
 
-    const interestItems = document.querySelectorAll('.interest-item img, .interest-item video');
-    interestItems.forEach(item => {
+const interestItems = document.querySelectorAll('.interest-item img, .interest-item video');
+interestItems.forEach(item => {
     item.addEventListener('click', () => {
         content.innerHTML = ''; // Clear previous content
         const clone = item.cloneNode(true);
@@ -67,10 +67,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         content.appendChild(clone);
         lightbox.style.display = 'flex';
-        });
     });
+});
 
-    closeButton.addEventListener('click', () => {
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox || e.target === closeButton) {
         lightbox.style.display = 'none';
+    }
     });
 });
