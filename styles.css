@@ -228,9 +228,14 @@ ul li {
 
 .interest-item {
     position: relative;
-    overflow: hidden;
+    overflow: hidden; /* Prevent media overflow */
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Depth effect */
+    max-width: 300px; /* Limit width of items */
+    max-height: 200px; /* Limit height of items */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: transform 0.3s ease;
 }
 
@@ -286,6 +291,19 @@ ul li {
     to {
         border-right-color: white;
     }
+}
+/* General Styling for Images and Videos */
+.interest-item img, 
+.interest-item video {
+    max-width: 100%; /* Scale down to fit the container */
+    max-height: 100%; /* Prevent overflow */
+    width: auto; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure proper cropping for non-uniform dimensions */
+    border-radius: 10px; /* Rounded corners */
+    display: block;
+    margin: 0 auto; /* Center the media inside the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Add some depth */
 }
 
 /* Lightbox Modal */
