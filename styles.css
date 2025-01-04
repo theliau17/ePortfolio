@@ -272,6 +272,7 @@ section h2 {
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    pointer-events: none;
 }
 .lightbox img,
 .lightbox video {
@@ -288,42 +289,6 @@ section h2 {
     cursor: pointer;
 }
 
-/* Interests Section 
-.interest-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-}
-.interest-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-}
-.interest-item img,
-.interest-item video {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 10px;
-}
-.interest-item .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-.interest-item:hover .overlay {
-    opacity: 1;
-}*/
 .findmyresume{
             color: #00aaff;
             font-weight: bold;
