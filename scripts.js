@@ -59,11 +59,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const interestItems = document.querySelectorAll('.interest-item img, .interest-item video');
     interestItems.forEach(item => {
-        item.addEventListener('click', () => {
-            content.innerHTML = ''; // Clear previous content
-            const clone = item.cloneNode(true);
-            content.appendChild(clone);
-            lightbox.style.display = 'flex';
+    item.addEventListener('click', () => {
+        content.innerHTML = ''; // Clear previous content
+        const clone = item.cloneNode(true);
+        if (clone.tagName === 'VIDEO') {
+            clone.setAttribute('controls', 'controls'); // Ensure controls are retained
+        }
+        content.appendChild(clone);
+        lightbox.style.display = 'flex';
         });
     });
 
